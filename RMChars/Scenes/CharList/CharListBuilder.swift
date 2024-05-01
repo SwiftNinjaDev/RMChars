@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetServiceKit
 
 final class CharListBuilder {
     
@@ -18,12 +19,16 @@ final class CharListBuilder {
     func build() -> UIViewController {
         let router = CharListRouter()
         
+        let networkService = NetworkService()
+        let charNetService = CharacterService(networkService: networkService)
+        
         let viewModel = CharListViewModel(
             store: CharListStore(initialState: .loading),
             router: router,
             inputData: inputData,
-            dependencies: .init()
+            dependencies: .init(charNetService: charNetService)
         )
+        
         let viewController = CharListViewController(viewModel: viewModel)
         
         router.view = viewController

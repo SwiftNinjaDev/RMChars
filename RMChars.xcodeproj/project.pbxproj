@@ -29,8 +29,13 @@
 		CA5D6CB52BE2800B0040975D /* CharDetailsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */; };
 		CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */; };
 		CA5D6CC22BE28F6C0040975D /* RMEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CA5D6CC92BE28FF50040975D /* RMChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CC82BE28FF50040975D /* RMChar.swift */; };
+		CA5D6CC92BE28FF50040975D /* CharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */; };
 		CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CCF2BE2AA760040975D /* StatefulMVVM */; };
+		CA5D6CD42BE2B1040040975D /* NetServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CD32BE2B1040040975D /* NetServiceKit */; };
+		CA5D6CD82BE2B4D50040975D /* CharacterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */; };
+		CA5D6CDA2BE2B5190040975D /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CD92BE2B5190040975D /* CharacterService.swift */; };
+		CA5D6CDC2BE2B6520040975D /* CharacterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */; };
+		CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CDE2BE2C1E90040975D /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +87,11 @@
 		CA5D6CAE2BE2800B0040975D /* CharDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewModel.swift; sourceTree = "<group>"; };
 		CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewState.swift; sourceTree = "<group>"; };
 		CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5D6CC82BE28FF50040975D /* RMChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMChar.swift; sourceTree = "<group>"; };
+		CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponse.swift; sourceTree = "<group>"; };
+		CA5D6CD12BE2B0EE0040975D /* NetServiceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NetServiceKit; path = Moduls/NetServiceKit; sourceTree = "<group>"; };
+		CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEndpoint.swift; sourceTree = "<group>"; };
+		CA5D6CD92BE2B5190040975D /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +100,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */,
+				CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */,
+				CA5D6CD42BE2B1040040975D /* NetServiceKit in Frameworks */,
 				CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +119,7 @@
 		CA5D6C6C2BE26C630040975D = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CD12BE2B0EE0040975D /* NetServiceKit */,
 				CA5D6C9B2BE270200040975D /* StatefulMVVM */,
 				CA5D6C772BE26C630040975D /* RMChars */,
 				CA5D6CBC2BE28F6C0040975D /* RMEntities */,
@@ -127,10 +139,11 @@
 		CA5D6C772BE26C630040975D /* RMChars */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D6C8E2BE26CA00040975D /* Architecture Layer */,
+				CA5D6CD52BE2B4AA0040975D /* Network Layer */,
 				CA5D6C8C2BE26C710040975D /* AppSceneDelegate */,
 				CA5D6C902BE26CC50040975D /* InfoPlists */,
 				CA5D6C8F2BE26CAD0040975D /* Resources */,
-				CA5D6C8E2BE26CA00040975D /* Project MVVM */,
 				CA5D6C8D2BE26C8C0040975D /* Scenes */,
 			);
 			path = RMChars;
@@ -155,14 +168,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		CA5D6C8E2BE26CA00040975D /* Project MVVM */ = {
+		CA5D6C8E2BE26CA00040975D /* Architecture Layer */ = {
 			isa = PBXGroup;
 			children = (
 				CA5D6C942BE26E620040975D /* ViewState.swift */,
 				CA5D6C962BE26E7E0040975D /* ViewModel.swift */,
 				CA5D6C982BE26E980040975D /* ViewModelController.swift */,
 			);
-			path = "Project MVVM";
+			path = "Architecture Layer";
 			sourceTree = "<group>";
 		};
 		CA5D6C8F2BE26CAD0040975D /* Resources */ = {
@@ -227,9 +240,27 @@
 		CA5D6CC72BE28FBF0040975D /* RM models */ = {
 			isa = PBXGroup;
 			children = (
-				CA5D6CC82BE28FF50040975D /* RMChar.swift */,
+				CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */,
 			);
 			path = "RM models";
+			sourceTree = "<group>";
+		};
+		CA5D6CD52BE2B4AA0040975D /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CD62BE2B4B70040975D /* CharacterService */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		CA5D6CD62BE2B4B70040975D /* CharacterService */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */,
+				CA5D6CD92BE2B5190040975D /* CharacterService.swift */,
+				CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */,
+			);
+			path = CharacterService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +294,8 @@
 			name = RMChars;
 			packageProductDependencies = (
 				CA5D6CCF2BE2AA760040975D /* StatefulMVVM */,
+				CA5D6CD32BE2B1040040975D /* NetServiceKit */,
+				CA5D6CDE2BE2C1E90040975D /* SnapKit */,
 			);
 			productName = RMChars;
 			productReference = CA5D6C752BE26C630040975D /* RMChars.app */;
@@ -316,6 +349,8 @@
 			mainGroup = CA5D6C6C2BE26C630040975D;
 			packageReferences = (
 				CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */,
+				CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */,
+				CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = CA5D6C762BE26C630040975D /* Products */;
 			projectDirPath = "";
@@ -375,10 +410,12 @@
 			files = (
 				CA5D6CB22BE2800B0040975D /* CharDetailsViewController.swift in Sources */,
 				CA5D6CB42BE2800B0040975D /* CharDetailsViewModel.swift in Sources */,
+				CA5D6CDC2BE2B6520040975D /* CharacterServiceProtocol.swift in Sources */,
 				CA5D6CB02BE2800B0040975D /* CharDetailsInputData.swift in Sources */,
 				CA5D6CA52BE27D6E0040975D /* CharListViewController.swift in Sources */,
 				CA5D6C972BE26E7E0040975D /* ViewModel.swift in Sources */,
 				CA5D6CB12BE2800B0040975D /* CharDetailsRouter.swift in Sources */,
+				CA5D6CD82BE2B4D50040975D /* CharacterEndpoint.swift in Sources */,
 				CA5D6C992BE26E980040975D /* ViewModelController.swift in Sources */,
 				CA5D6CA72BE27D860040975D /* CharListViewModel.swift in Sources */,
 				CA5D6C792BE26C630040975D /* AppDelegate.swift in Sources */,
@@ -387,6 +424,7 @@
 				CA5D6C952BE26E620040975D /* ViewState.swift in Sources */,
 				CA5D6CA12BE271E70040975D /* CharListProtocols.swift in Sources */,
 				CA5D6C9F2BE271D70040975D /* CharListInputData.swift in Sources */,
+				CA5D6CDA2BE2B5190040975D /* CharacterService.swift in Sources */,
 				CA5D6CA32BE27D5B0040975D /* CharListRouter.swift in Sources */,
 				CA5D6CA92BE27D950040975D /* CharListViewState.swift in Sources */,
 				CA5D6CB32BE2800B0040975D /* CharDetailsBuilder.swift in Sources */,
@@ -398,7 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5D6CC92BE28FF50040975D /* RMChar.swift in Sources */,
+				CA5D6CC92BE28FF50040975D /* CharactersResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,12 +745,36 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Moduls/StatefulMVVM;
 		};
+		CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Moduls/NetServiceKit;
+		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		CA5D6CCF2BE2AA760040975D /* StatefulMVVM */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = StatefulMVVM;
+		};
+		CA5D6CD32BE2B1040040975D /* NetServiceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetServiceKit;
+		};
+		CA5D6CDE2BE2C1E90040975D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

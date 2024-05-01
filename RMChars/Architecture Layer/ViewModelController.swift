@@ -7,6 +7,7 @@
 
 import StatefulMVVM
 import UIKit
+import SnapKit
 
 open class ViewModelController<State: ViewState, VM: ViewModel<State>>: UIViewController, StatefulView {
     public let viewModel: VM

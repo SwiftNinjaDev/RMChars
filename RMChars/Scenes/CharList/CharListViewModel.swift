@@ -10,8 +10,9 @@ import RMEntities
 typealias CharListStore = Store<CharListoViewState>
 
 final class CharListViewModel: ViewModel<CharListoViewState>, MoreInfoViewOutput {
+    
     struct Dependencies {
-        // put your dependencies here
+        let charNetService: CharacterServiceProtocol
     }
 
     private let router: CharListRouterProtocol
@@ -36,16 +37,31 @@ final class CharListViewModel: ViewModel<CharListoViewState>, MoreInfoViewOutput
 // MARK: Network
 extension CharListViewModel {
     
-    func fetchData() {
-        let successViewState = self.prepareViewState()
-        store.change(state: .loaded(successViewState))
+    func fetchCharacters(page: Int? = 0, status: String? = nil) {
+        store.change(state: .loading)
+        
+        dependencies.charNetService.fetchCharacters(
+            page: page,
+            status: status
+        ) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(let response):
+                let successViewState = self.prepareViewState(from: response)
+                store.change(state: .loaded(successViewState))
+            case .failure(let error):
+                store.change(state: .error(error))
+            }
+        }
+        
     }
 }
 
 // MARK: Navigation
 extension CharListViewModel {
     
-    func showCharDetails(with id: String) {
+    func showCharDetails(with id: Int) {
         router.navigate(to: .charDetails(id: id))
     }
 }
@@ -53,7 +69,7 @@ extension CharListViewModel {
 // MARK: Prepare View state
 extension CharListViewModel {
     
-    private func prepareViewState() -> CharListoViewState.Success {
-        CharListoViewState.Success()
+    private func prepareViewState(from response: CharactersResponse) -> CharListoViewState.Success {
+        CharListoViewState.Success(characters: response.results)
     }
 }

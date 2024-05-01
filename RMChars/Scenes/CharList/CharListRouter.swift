@@ -8,7 +8,7 @@
 import UIKit
 
 enum MoreInfoRoute {
-    case charDetails(id: String)
+    case charDetails(id: Int)
 }
 
 protocol CharListRouterProtocol {
@@ -29,11 +29,10 @@ final class CharListRouter: CharListRouterProtocol {
 
 extension CharListRouter {
     
-    private func goToCharDetails(_ id: String) {
+    private func goToCharDetails(_ id: Int) {
         let inputData = CharDetailsInputData(charId: id)
         let vc = CharDetailsBuilder(inputData: inputData).build()
         
-        guard let navigationController = view?.navigationController else { return }
-        navigationController.pushViewController(vc, animated: true)
+        view?.present(vc, animated: true)
     }
 }

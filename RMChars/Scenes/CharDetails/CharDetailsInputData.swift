@@ -6,5 +6,5 @@
 //
 
 struct CharDetailsInputData {
-    let charId: String
+    let charId: Int
 }

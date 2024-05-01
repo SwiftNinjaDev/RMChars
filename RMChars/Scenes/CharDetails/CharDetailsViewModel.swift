@@ -33,6 +33,7 @@ final class CharDetailsViewModel: ViewModel<CharDetailsViewState> {
     // MARK: - View Output
     
     func fetchData() {
+        print(inputData.charId)
         store.change(state: .loading)
     }
 }

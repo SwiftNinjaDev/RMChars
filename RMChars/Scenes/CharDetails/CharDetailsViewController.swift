@@ -20,8 +20,7 @@ final class CharDetailsViewController: ViewModelController<CharDetailsViewState,
     
     override func setupUI() {
         super.setupUI()
-        // perform additional UI setup here
-        view.backgroundColor = .red
+        view.backgroundColor = .white
     }
     
     override func render(state: CharDetailsViewState) {
