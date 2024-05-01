@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,10 +27,10 @@
 		CA5D6CB32BE2800B0040975D /* CharDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAD2BE2800B0040975D /* CharDetailsBuilder.swift */; };
 		CA5D6CB42BE2800B0040975D /* CharDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAE2BE2800B0040975D /* CharDetailsViewModel.swift */; };
 		CA5D6CB52BE2800B0040975D /* CharDetailsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */; };
-		CA5D6CBE2BE28F6C0040975D /* RMEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5D6CBD2BE28F6C0040975D /* RMEntities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */; };
 		CA5D6CC22BE28F6C0040975D /* RMEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CA5D6CC92BE28FF50040975D /* RMChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CC82BE28FF50040975D /* RMChar.swift */; };
+		CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CCF2BE2AA760040975D /* StatefulMVVM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,6 @@
 		CA5D6CAE2BE2800B0040975D /* CharDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewModel.swift; sourceTree = "<group>"; };
 		CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewState.swift; sourceTree = "<group>"; };
 		CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5D6CBD2BE28F6C0040975D /* RMEntities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMEntities.h; sourceTree = "<group>"; };
 		CA5D6CC82BE28FF50040975D /* RMChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMChar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */,
 				CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +219,6 @@
 		CA5D6CBC2BE28F6C0040975D /* RMEntities */ = {
 			isa = PBXGroup;
 			children = (
-				CA5D6CBD2BE28F6C0040975D /* RMEntities.h */,
 				CA5D6CC72BE28FBF0040975D /* RM models */,
 			);
 			path = RMEntities;
@@ -240,7 +239,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5D6CBE2BE28F6C0040975D /* RMEntities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +253,7 @@
 				CA5D6C722BE26C630040975D /* Frameworks */,
 				CA5D6C732BE26C630040975D /* Resources */,
 				CA5D6CC62BE28F6C0040975D /* Embed Frameworks */,
+				CA5D6CCD2BE2A3640040975D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -262,6 +261,9 @@
 				CA5D6CC02BE28F6C0040975D /* PBXTargetDependency */,
 			);
 			name = RMChars;
+			packageProductDependencies = (
+				CA5D6CCF2BE2AA760040975D /* StatefulMVVM */,
+			);
 			productName = RMChars;
 			productReference = CA5D6C752BE26C630040975D /* RMChars.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +314,9 @@
 				Base,
 			);
 			mainGroup = CA5D6C6C2BE26C630040975D;
+			packageReferences = (
+				CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */,
+			);
 			productRefGroup = CA5D6C762BE26C630040975D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,6 +345,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA5D6CCD2BE2A3640040975D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA5D6C712BE26C630040975D /* Sources */ = {
@@ -434,7 +461,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -497,7 +524,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -674,6 +701,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Moduls/StatefulMVVM;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA5D6CCF2BE2AA760040975D /* StatefulMVVM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StatefulMVVM;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA5D6C6D2BE26C630040975D /* Project object */;
 }

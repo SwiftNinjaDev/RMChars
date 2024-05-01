@@ -8,4 +8,3 @@
 protocol MoreInfoViewOutput {
     func fetchData()
 }
-

@@ -10,4 +10,8 @@ import Foundation
 public struct RMChar {
     
     public let name: String
+    
+    public init(name: String) {
+        self.name = name
+    }
 }

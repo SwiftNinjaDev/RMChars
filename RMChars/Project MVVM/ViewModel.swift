@@ -13,4 +13,3 @@ open class ViewModel<State: ViewState>: GenericViewModel<State> {
         store.change(state: state)
     }
 }
-

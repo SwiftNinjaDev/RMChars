@@ -53,4 +53,3 @@ open class ViewModelController<State: ViewState, VM: ViewModel<State>>: UIViewCo
         self.state = state
     }
 }
-
