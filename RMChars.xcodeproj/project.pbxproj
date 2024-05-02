@@ -36,6 +36,14 @@
 		CA5D6CDA2BE2B5190040975D /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CD92BE2B5190040975D /* CharacterService.swift */; };
 		CA5D6CDC2BE2B6520040975D /* CharacterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */; };
 		CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CDE2BE2C1E90040975D /* SnapKit */; };
+		CA5D6CE22BE35D6E0040975D /* CharactersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE12BE35D6E0040975D /* CharactersTableView.swift */; };
+		CA5D6CE42BE35EA90040975D /* CharactersCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE32BE35EA90040975D /* CharactersCellItem.swift */; };
+		CA5D6CE62BE360040040975D /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE52BE360040040975D /* CharactersTableViewCell.swift */; };
+		CA5D6CE92BE3613B0040975D /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE82BE3613B0040975D /* Buildable.swift */; };
+		CA5D6CEC2BE37AB70040975D /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CEB2BE37AB70040975D /* Collection+Ext.swift */; };
+		CA5D6CEE2BE37ACF0040975D /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CED2BE37ACE0040975D /* View+Ext.swift */; };
+		CA5D6CF02BE3878F0040975D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CEF2BE3878F0040975D /* ProgressHUD.swift */; };
+		CA5D6CF32BE3A0590040975D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CF22BE3A0590040975D /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +100,13 @@
 		CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEndpoint.swift; sourceTree = "<group>"; };
 		CA5D6CD92BE2B5190040975D /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceProtocol.swift; sourceTree = "<group>"; };
+		CA5D6CE12BE35D6E0040975D /* CharactersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableView.swift; sourceTree = "<group>"; };
+		CA5D6CE32BE35EA90040975D /* CharactersCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCellItem.swift; sourceTree = "<group>"; };
+		CA5D6CE52BE360040040975D /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		CA5D6CE82BE3613B0040975D /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
+		CA5D6CEB2BE37AB70040975D /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
+		CA5D6CED2BE37ACE0040975D /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		CA5D6CEF2BE3878F0040975D /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +118,7 @@
 				CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */,
 				CA5D6CD42BE2B1040040975D /* NetServiceKit in Frameworks */,
 				CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */,
+				CA5D6CF32BE3A0590040975D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +155,7 @@
 		CA5D6C772BE26C630040975D /* RMChars */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CE72BE360D40040975D /* Helpers */,
 				CA5D6C8E2BE26CA00040975D /* Architecture Layer */,
 				CA5D6CD52BE2B4AA0040975D /* Network Layer */,
 				CA5D6C8C2BE26C710040975D /* AppSceneDelegate */,
@@ -205,6 +222,7 @@
 		CA5D6C922BE26E180040975D /* CharList */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CE02BE35D010040975D /* Views */,
 				CA5D6C9C2BE271B20040975D /* CharListBuilder.swift */,
 				CA5D6C9E2BE271D70040975D /* CharListInputData.swift */,
 				CA5D6CA02BE271E70040975D /* CharListProtocols.swift */,
@@ -263,6 +281,35 @@
 			path = CharacterService;
 			sourceTree = "<group>";
 		};
+		CA5D6CE02BE35D010040975D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CE12BE35D6E0040975D /* CharactersTableView.swift */,
+				CA5D6CE32BE35EA90040975D /* CharactersCellItem.swift */,
+				CA5D6CE52BE360040040975D /* CharactersTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA5D6CE72BE360D40040975D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CEA2BE37A9A0040975D /* Extensions */,
+				CA5D6CE82BE3613B0040975D /* Buildable.swift */,
+				CA5D6CEF2BE3878F0040975D /* ProgressHUD.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CA5D6CEA2BE37A9A0040975D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CEB2BE37AB70040975D /* Collection+Ext.swift */,
+				CA5D6CED2BE37ACE0040975D /* View+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -296,6 +343,7 @@
 				CA5D6CCF2BE2AA760040975D /* StatefulMVVM */,
 				CA5D6CD32BE2B1040040975D /* NetServiceKit */,
 				CA5D6CDE2BE2C1E90040975D /* SnapKit */,
+				CA5D6CF22BE3A0590040975D /* SDWebImage */,
 			);
 			productName = RMChars;
 			productReference = CA5D6C752BE26C630040975D /* RMChars.app */;
@@ -351,6 +399,7 @@
 				CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */,
 				CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */,
 				CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = CA5D6C762BE26C630040975D /* Products */;
 			projectDirPath = "";
@@ -410,7 +459,11 @@
 			files = (
 				CA5D6CB22BE2800B0040975D /* CharDetailsViewController.swift in Sources */,
 				CA5D6CB42BE2800B0040975D /* CharDetailsViewModel.swift in Sources */,
+				CA5D6CEE2BE37ACF0040975D /* View+Ext.swift in Sources */,
 				CA5D6CDC2BE2B6520040975D /* CharacterServiceProtocol.swift in Sources */,
+				CA5D6CE92BE3613B0040975D /* Buildable.swift in Sources */,
+				CA5D6CE62BE360040040975D /* CharactersTableViewCell.swift in Sources */,
+				CA5D6CF02BE3878F0040975D /* ProgressHUD.swift in Sources */,
 				CA5D6CB02BE2800B0040975D /* CharDetailsInputData.swift in Sources */,
 				CA5D6CA52BE27D6E0040975D /* CharListViewController.swift in Sources */,
 				CA5D6C972BE26E7E0040975D /* ViewModel.swift in Sources */,
@@ -419,10 +472,13 @@
 				CA5D6C992BE26E980040975D /* ViewModelController.swift in Sources */,
 				CA5D6CA72BE27D860040975D /* CharListViewModel.swift in Sources */,
 				CA5D6C792BE26C630040975D /* AppDelegate.swift in Sources */,
+				CA5D6CE42BE35EA90040975D /* CharactersCellItem.swift in Sources */,
+				CA5D6CE22BE35D6E0040975D /* CharactersTableView.swift in Sources */,
 				CA5D6CB52BE2800B0040975D /* CharDetailsViewState.swift in Sources */,
 				CA5D6C9D2BE271B20040975D /* CharListBuilder.swift in Sources */,
 				CA5D6C952BE26E620040975D /* ViewState.swift in Sources */,
 				CA5D6CA12BE271E70040975D /* CharListProtocols.swift in Sources */,
+				CA5D6CEC2BE37AB70040975D /* Collection+Ext.swift in Sources */,
 				CA5D6C9F2BE271D70040975D /* CharListInputData.swift in Sources */,
 				CA5D6CDA2BE2B5190040975D /* CharacterService.swift in Sources */,
 				CA5D6CA32BE27D5B0040975D /* CharListRouter.swift in Sources */,
@@ -760,6 +816,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -775,6 +839,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		CA5D6CF22BE3A0590040975D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
