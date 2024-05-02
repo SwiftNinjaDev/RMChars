@@ -25,4 +25,12 @@ final class CharacterService: CharacterServiceProtocol {
         let endpoint = CharacterEndpoint(page: page, status: status)
         networkService.sendRequest(endpoint: endpoint, resultHandler: completion)
     }
+    
+    func fetchCharacterDetail(
+        id: Int,
+        completion: @escaping (Result<RMCharacter, NetworkError>) -> Void
+    ) {
+        let endpoint = CharacterEndpoint.characterDetail(id: id)
+        networkService.sendRequest(endpoint: endpoint, resultHandler: completion)
+    }
 }

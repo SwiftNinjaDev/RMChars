@@ -11,13 +11,17 @@ final class CharListViewController: ViewModelController<CharListoViewState, Char
     
     // MARK: - Views
     
-    private lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        table.dataSource = self
-        table.delegate = self
-        return table
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl(frame: .zero)
+        control.addTarget(self, action: #selector(onRefreshRequested), for: .valueChanged)
+        return control
     }()
+    
+    private lazy var tableView: CharactersTableView = .build {
+        $0.delegate = viewModel
+        $0.refreshControl = refreshControl
+        $0.roundCorners(.allCorners, radius: 10)
+    }
     
     // MARK: - Life Cycle
     
@@ -31,6 +35,9 @@ final class CharListViewController: ViewModelController<CharListoViewState, Char
         super.setupUI()
         addSubviews()
         setupConstraints()
+        view.backgroundColor = .white
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationItem.title = "Characters"
     }
     
     private func addSubviews() {
@@ -39,48 +46,28 @@ final class CharListViewController: ViewModelController<CharListoViewState, Char
     
     private func setupConstraints() {
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.verticalEdges.equalToSuperview()
         }
+    }
+    
+    @objc
+    private func onRefreshRequested(_ control: UIRefreshControl) {
+        viewModel.removeAllChars()
+        viewModel.fetchCharacters()
+        control.endRefreshing()
     }
     
     override func render(state: CharListoViewState) {
         switch state {
         case .loading:
-            break
-        case .loaded:
-            tableView.reloadData()
+            showIndicatorView()
+        case .loaded(let data):
+            hideIndicatorView()
+            tableView.configure(with: data.sections)
         case .error(let error):
+            hideIndicatorView()
             print(error)
-        }
-    }
-}
-
-// MARK: - UITableView DataSource and Delegate
-
-extension CharListViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard case .loaded(let success) = viewModel.store.state else {
-            return 0
-        }
-        return success.characters.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if case .loaded(let success) = viewModel.store.state {
-            let character = success.characters[indexPath.row]
-            cell.textLabel?.text = character.name
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if case .loaded(let success) = viewModel.store.state {
-            let character = success.characters[indexPath.row]
-            viewModel.showCharDetails(with: character.id)
         }
     }
 }

@@ -13,6 +13,7 @@ enum CharListoViewState: ViewState {
     case error(NetworkError)
     
     struct Success {
-        var characters: [Character]
+        var sections: [CharactersSection]
+        var statusList: [String]
     }
 }

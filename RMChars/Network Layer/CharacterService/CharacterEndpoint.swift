@@ -32,3 +32,13 @@ struct CharacterEndpoint: Endpoint {
         queryParams = params
     }
 }
+
+extension CharacterEndpoint {
+    static func characterDetail(id: Int) -> Self {
+        return CharacterEndpoint(path: "/api/character/\(id)")
+    }
+
+    init(path: String) {
+        self.path = path
+    }
+}

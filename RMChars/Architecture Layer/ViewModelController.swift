@@ -54,3 +54,14 @@ open class ViewModelController<State: ViewState, VM: ViewModel<State>>: UIViewCo
         self.state = state
     }
 }
+
+public extension UIViewController {
+
+    func showIndicatorView() {
+        ProgressHUD.show()
+    }
+    
+    func hideIndicatorView() {
+        ProgressHUD.dismiss()
+    }
+}

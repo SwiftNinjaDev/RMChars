@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetServiceKit
 
 final class CharDetailsBuilder {
     
@@ -18,11 +19,14 @@ final class CharDetailsBuilder {
     func build() -> UIViewController {
         let router = CharDetailsRouter()
         
+        let networkService = NetworkService()
+        let charNetService = CharacterService(networkService: networkService)
+        
         let viewModel = CharDetailsViewModel(
             store: CharDetailsStore(initialState: .loading),
             router: router,
             inputData: inputData,
-            dependencies: .init()
+            dependencies: .init(charNetService: charNetService)
         )
         let viewController = CharDetailsViewController(viewModel: viewModel)
         

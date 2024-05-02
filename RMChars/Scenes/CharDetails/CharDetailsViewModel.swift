@@ -8,8 +8,9 @@
 typealias CharDetailsStore = Store<CharDetailsViewState>
 
 final class CharDetailsViewModel: ViewModel<CharDetailsViewState> {
+    
     struct Dependencies {
-        // put your dependencies here
+        let charNetService: CharacterServiceProtocol
     }
 
     private let router: CharDetailsRouterProtocol
@@ -35,5 +36,20 @@ final class CharDetailsViewModel: ViewModel<CharDetailsViewState> {
     func fetchData() {
         print(inputData.charId)
         store.change(state: .loading)
+        dependencies.charNetService.fetchCharacterDetail(
+            id: inputData.charId
+        ) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
+}
+
+private func prepareSuccessState() {
+    
 }

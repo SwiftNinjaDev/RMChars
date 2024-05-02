@@ -6,5 +6,5 @@
 //
 
 protocol MoreInfoViewOutput {
-    func fetchCharacters(page: Int?, status: String?)
+    func fetchCharacters(status: String?)
 }

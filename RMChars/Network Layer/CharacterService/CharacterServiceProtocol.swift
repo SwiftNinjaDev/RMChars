@@ -15,4 +15,9 @@ protocol CharacterServiceProtocol {
         status: String?,
         completion: @escaping (Result<CharactersResponse, NetworkError>) -> Void
     )
+    
+    func fetchCharacterDetail(
+        id: Int,
+        completion: @escaping (Result<RMCharacter, NetworkError>) -> Void
+    )
 }
