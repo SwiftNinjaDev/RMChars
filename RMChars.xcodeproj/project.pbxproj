@@ -48,6 +48,7 @@
 		CA5D6CFA2BE419CD0040975D /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CF92BE419CD0040975D /* DynamicCollectionView.swift */; };
 		CA5D6CFC2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CFB2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		CA5D6CFE2BE41B710040975D /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CFD2BE41B710040975D /* StatusCollectionViewCell.swift */; };
+		CA5D6D002BE4C3970040975D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA5D6CFF2BE4C3970040975D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		CA5D6CF92BE419CD0040975D /* DynamicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
 		CA5D6CFB2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		CA5D6CFD2BE41B710040975D /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA5D6CFF2BE4C3970040975D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		CA5D6C6C2BE26C630040975D = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CFF2BE4C3970040975D /* README.md */,
 				CA5D6CD12BE2B0EE0040975D /* NetServiceKit */,
 				CA5D6C9B2BE270200040975D /* StatefulMVVM */,
 				CA5D6C772BE26C630040975D /* RMChars */,
@@ -452,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5D6D002BE4C3970040975D /* README.md in Resources */,
 				CA5D6C852BE26C650040975D /* LaunchScreen.storyboard in Resources */,
 				CA5D6C822BE26C650040975D /* Assets.xcassets in Resources */,
 			);
