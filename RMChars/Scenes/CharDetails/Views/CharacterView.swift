@@ -15,42 +15,47 @@ struct CharacterView: View {
     var status: CharacterStatus?
 
     var body: some View {
-        VStack {
-            Image(uiImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity, maxHeight: 350, alignment: .top)
-                .clipped()
-                .cornerRadius(10)
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width - 16, height: 350, alignment: .top)
+                    .clipped()
+                    .cornerRadius(10)
+                    .padding(.horizontal, 8)
+                    .padding(.top, 16)
 
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    Text(name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    if let status = status {
-                        Text(status.rawValue)
-                            .font(.caption)
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        Text(name)
+                            .font(.title)
                             .fontWeight(.bold)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(status.backgroundColor)
-                            .cornerRadius(10)
-                            .foregroundColor(.white)
+
+                        Spacer()
+
+                        if let status = status {
+                            Text(status.rawValue)
+                                .font(.body)
+                                .fontWeight(.bold)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .background(status.backgroundColor)
+                                .cornerRadius(12)
+                                .foregroundColor(.white)
+                        }
                     }
+
+                    Text(speciesGender)
+                        .font(.subheadline)
+
+                    Text("Location: \(location)")
+                        .font(.subheadline)
                 }
-
-                Text(speciesGender)
-                    .font(.subheadline)
-
-                Text("Location: \(location)")
-                    .font(.subheadline)
+                .padding(.horizontal, 8)
+                .padding(.bottom, 16)
             }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
         }
+        .padding(.horizontal, 8)
     }
 }
