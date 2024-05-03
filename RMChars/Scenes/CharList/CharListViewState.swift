@@ -14,6 +14,24 @@ enum CharListoViewState: ViewState {
     
     struct Success {
         var sections: [CharactersSection]
-        var statusList: [String]
+    }
+}
+
+enum CharacterStatus: String, CaseIterable {
+    
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown = "Unknown"
+
+    init?(from status: RMCharacter.Status) {
+        
+        switch status {
+        case .alive:
+            self = .alive
+        case .dead:
+            self = .dead
+        case .unknown:
+            self = .unknown
+        }
     }
 }

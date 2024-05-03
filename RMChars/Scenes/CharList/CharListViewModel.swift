@@ -24,6 +24,8 @@ final class CharListViewModel: ViewModel<CharListoViewState>, MoreInfoViewOutput
     private var shouldStopPagination: Bool = false
     
     private var characters: [RMCharacter] = []
+    
+    private var selectedStatus: CharacterStatus?
 
     // MARK: - Init
     
@@ -44,17 +46,27 @@ final class CharListViewModel: ViewModel<CharListoViewState>, MoreInfoViewOutput
         page = 1
         shouldStopPagination = false
     }
+    
+    func updateStatus(_ status: CharacterStatus?, isSelected: Bool) {
+
+        if isSelected {
+            selectedStatus = status
+        } else {
+            selectedStatus = nil
+        }
+        
+        removeAllChars()
+        fetchCharacters()
+    }
 }
 
 // MARK: Network
 extension CharListViewModel {
     
-    func fetchCharacters(status: String? = nil) {
+    func fetchCharacters() {
           store.change(state: .loading)
-
-          dependencies.charNetService.fetchCharacters(page: page, status: status) { [weak self] result in
+        dependencies.charNetService.fetchCharacters(page: page, status: selectedStatus?.rawValue) { [weak self] result in
               guard let self = self else { return }
-
               switch result {
               case .success(let data):
                   self.handleResponse(data)
@@ -96,10 +108,7 @@ extension CharListViewModel {
     }
     
     private func prepareSuccessState(from response: [RMCharacter]) -> CharListoViewState.Success {
-        CharListoViewState.Success(
-            sections: [prepareCharactersSection(from: response)],
-            statusList: []
-        )
+        CharListoViewState.Success(sections: [prepareCharactersSection(from: response)])
     }
 }
 

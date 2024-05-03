@@ -1,18 +1,10 @@
-//
-//  CharDetailsViewController.swift
-//  RMChars
-//
-//  Created by Nikolai Kharkevich on 01.05.2024.
-//
-
 import UIKit
+import SwiftUI
 
 final class CharDetailsViewController: ViewModelController<CharDetailsViewState, CharDetailsViewModel> {
     
-    // MARK: - Views
-    
-    // MARK: - Life Cycle
-    
+    private var swiftUIController: UIHostingController<CharacterView>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchData()
@@ -28,11 +20,26 @@ final class CharDetailsViewController: ViewModelController<CharDetailsViewState,
         
         switch state {
         case .loading:
-            break
+            showIndicatorView()
         case .loaded(let data):
-            print(data)
+            hideIndicatorView()
+            configureUI(with: data)
         case .error(let error):
+            hideIndicatorView()
             print(error)
+        }
+    }
+    
+    private func configureUI(with data: CharDetailsViewState.CharacterDetails) {
+        let speciesGender = "\(data.species) • \(data.gender ?? "")"
+        let swiftUIView = CharacterView(name: data.name, speciesGender: speciesGender, location: data.location ?? "", image: data.image)
+        swiftUIController = UIHostingController(rootView: swiftUIView)
+        
+        if let swiftUIController = swiftUIController {
+            addChild(swiftUIController)
+            swiftUIController.view.frame = view.bounds
+            view.addSubview(swiftUIController.view)
+            swiftUIController.didMove(toParent: self)
         }
     }
 }

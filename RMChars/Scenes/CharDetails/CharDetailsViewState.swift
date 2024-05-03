@@ -5,16 +5,18 @@
 //  Created by Nikolai Kharkevich on 01.05.2024.
 //
 
+import UIKit
+
 enum CharDetailsViewState: ViewState {
     case loading
-    case loaded(Success)
-    case error(Failure)
+    case loaded(CharacterDetails)
+    case error(NetworkError)
     
-    struct Success {
-        // fulfill with required fields
-    }
-    
-    struct Failure: Error {
-        // fulfill with required fields
+    struct CharacterDetails {
+        let image: UIImage
+        let name: String
+        let location: String?
+        let gender: String?
+        let species: String
     }
 }
