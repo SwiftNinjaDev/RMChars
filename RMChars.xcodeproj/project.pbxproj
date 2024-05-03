@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,10 +27,28 @@
 		CA5D6CB32BE2800B0040975D /* CharDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAD2BE2800B0040975D /* CharDetailsBuilder.swift */; };
 		CA5D6CB42BE2800B0040975D /* CharDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAE2BE2800B0040975D /* CharDetailsViewModel.swift */; };
 		CA5D6CB52BE2800B0040975D /* CharDetailsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */; };
-		CA5D6CBE2BE28F6C0040975D /* RMEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5D6CBD2BE28F6C0040975D /* RMEntities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */; };
 		CA5D6CC22BE28F6C0040975D /* RMEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CA5D6CC92BE28FF50040975D /* RMChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CC82BE28FF50040975D /* RMChar.swift */; };
+		CA5D6CC92BE28FF50040975D /* CharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */; };
+		CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CCF2BE2AA760040975D /* StatefulMVVM */; };
+		CA5D6CD42BE2B1040040975D /* NetServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CD32BE2B1040040975D /* NetServiceKit */; };
+		CA5D6CD82BE2B4D50040975D /* CharacterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */; };
+		CA5D6CDA2BE2B5190040975D /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CD92BE2B5190040975D /* CharacterService.swift */; };
+		CA5D6CDC2BE2B6520040975D /* CharacterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */; };
+		CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CDE2BE2C1E90040975D /* SnapKit */; };
+		CA5D6CE22BE35D6E0040975D /* CharactersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE12BE35D6E0040975D /* CharactersTableView.swift */; };
+		CA5D6CE42BE35EA90040975D /* CharactersCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE32BE35EA90040975D /* CharactersCellItem.swift */; };
+		CA5D6CE62BE360040040975D /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE52BE360040040975D /* CharactersTableViewCell.swift */; };
+		CA5D6CE92BE3613B0040975D /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CE82BE3613B0040975D /* Buildable.swift */; };
+		CA5D6CEC2BE37AB70040975D /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CEB2BE37AB70040975D /* Collection+Ext.swift */; };
+		CA5D6CEE2BE37ACF0040975D /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CED2BE37ACE0040975D /* View+Ext.swift */; };
+		CA5D6CF02BE3878F0040975D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CEF2BE3878F0040975D /* ProgressHUD.swift */; };
+		CA5D6CF32BE3A0590040975D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6CF22BE3A0590040975D /* SDWebImage */; };
+		CA5D6CF52BE3BC2C0040975D /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CF42BE3BC2C0040975D /* CharacterView.swift */; };
+		CA5D6CFA2BE419CD0040975D /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CF92BE419CD0040975D /* DynamicCollectionView.swift */; };
+		CA5D6CFC2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CFB2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		CA5D6CFE2BE41B710040975D /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CFD2BE41B710040975D /* StatusCollectionViewCell.swift */; };
+		CA5D6D002BE4C3970040975D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA5D6CFF2BE4C3970040975D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +100,23 @@
 		CA5D6CAE2BE2800B0040975D /* CharDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewModel.swift; sourceTree = "<group>"; };
 		CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewState.swift; sourceTree = "<group>"; };
 		CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5D6CBD2BE28F6C0040975D /* RMEntities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMEntities.h; sourceTree = "<group>"; };
-		CA5D6CC82BE28FF50040975D /* RMChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMChar.swift; sourceTree = "<group>"; };
+		CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponse.swift; sourceTree = "<group>"; };
+		CA5D6CD12BE2B0EE0040975D /* NetServiceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NetServiceKit; path = Moduls/NetServiceKit; sourceTree = "<group>"; };
+		CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEndpoint.swift; sourceTree = "<group>"; };
+		CA5D6CD92BE2B5190040975D /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceProtocol.swift; sourceTree = "<group>"; };
+		CA5D6CE12BE35D6E0040975D /* CharactersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableView.swift; sourceTree = "<group>"; };
+		CA5D6CE32BE35EA90040975D /* CharactersCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCellItem.swift; sourceTree = "<group>"; };
+		CA5D6CE52BE360040040975D /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		CA5D6CE82BE3613B0040975D /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
+		CA5D6CEB2BE37AB70040975D /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
+		CA5D6CED2BE37ACE0040975D /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		CA5D6CEF2BE3878F0040975D /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		CA5D6CF42BE3BC2C0040975D /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		CA5D6CF92BE419CD0040975D /* DynamicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
+		CA5D6CFB2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		CA5D6CFD2BE41B710040975D /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA5D6CFF2BE4C3970040975D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +124,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */,
+				CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */,
+				CA5D6CD42BE2B1040040975D /* NetServiceKit in Frameworks */,
 				CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */,
+				CA5D6CF32BE3A0590040975D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +145,8 @@
 		CA5D6C6C2BE26C630040975D = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CFF2BE4C3970040975D /* README.md */,
+				CA5D6CD12BE2B0EE0040975D /* NetServiceKit */,
 				CA5D6C9B2BE270200040975D /* StatefulMVVM */,
 				CA5D6C772BE26C630040975D /* RMChars */,
 				CA5D6CBC2BE28F6C0040975D /* RMEntities */,
@@ -127,10 +166,12 @@
 		CA5D6C772BE26C630040975D /* RMChars */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CE72BE360D40040975D /* Helpers */,
+				CA5D6C8E2BE26CA00040975D /* Architecture Layer */,
+				CA5D6CD52BE2B4AA0040975D /* Network Layer */,
 				CA5D6C8C2BE26C710040975D /* AppSceneDelegate */,
 				CA5D6C902BE26CC50040975D /* InfoPlists */,
 				CA5D6C8F2BE26CAD0040975D /* Resources */,
-				CA5D6C8E2BE26CA00040975D /* Project MVVM */,
 				CA5D6C8D2BE26C8C0040975D /* Scenes */,
 			);
 			path = RMChars;
@@ -155,14 +196,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		CA5D6C8E2BE26CA00040975D /* Project MVVM */ = {
+		CA5D6C8E2BE26CA00040975D /* Architecture Layer */ = {
 			isa = PBXGroup;
 			children = (
 				CA5D6C942BE26E620040975D /* ViewState.swift */,
 				CA5D6C962BE26E7E0040975D /* ViewModel.swift */,
 				CA5D6C982BE26E980040975D /* ViewModelController.swift */,
 			);
-			path = "Project MVVM";
+			path = "Architecture Layer";
 			sourceTree = "<group>";
 		};
 		CA5D6C8F2BE26CAD0040975D /* Resources */ = {
@@ -192,6 +233,7 @@
 		CA5D6C922BE26E180040975D /* CharList */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CE02BE35D010040975D /* Views */,
 				CA5D6C9C2BE271B20040975D /* CharListBuilder.swift */,
 				CA5D6C9E2BE271D70040975D /* CharListInputData.swift */,
 				CA5D6CA02BE271E70040975D /* CharListProtocols.swift */,
@@ -206,6 +248,7 @@
 		CA5D6C932BE26E2D0040975D /* CharDetails */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D6CF62BE3BD110040975D /* Views */,
 				CA5D6CAD2BE2800B0040975D /* CharDetailsBuilder.swift */,
 				CA5D6CAA2BE2800B0040975D /* CharDetailsInputData.swift */,
 				CA5D6CAB2BE2800B0040975D /* CharDetailsRouter.swift */,
@@ -219,7 +262,6 @@
 		CA5D6CBC2BE28F6C0040975D /* RMEntities */ = {
 			isa = PBXGroup;
 			children = (
-				CA5D6CBD2BE28F6C0040975D /* RMEntities.h */,
 				CA5D6CC72BE28FBF0040975D /* RM models */,
 			);
 			path = RMEntities;
@@ -228,9 +270,83 @@
 		CA5D6CC72BE28FBF0040975D /* RM models */ = {
 			isa = PBXGroup;
 			children = (
-				CA5D6CC82BE28FF50040975D /* RMChar.swift */,
+				CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */,
 			);
 			path = "RM models";
+			sourceTree = "<group>";
+		};
+		CA5D6CD52BE2B4AA0040975D /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CD62BE2B4B70040975D /* CharacterService */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		CA5D6CD62BE2B4B70040975D /* CharacterService */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */,
+				CA5D6CD92BE2B5190040975D /* CharacterService.swift */,
+				CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */,
+			);
+			path = CharacterService;
+			sourceTree = "<group>";
+		};
+		CA5D6CE02BE35D010040975D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CF82BE419C20040975D /* Collection */,
+				CA5D6CF72BE419B60040975D /* Table */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA5D6CE72BE360D40040975D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CEA2BE37A9A0040975D /* Extensions */,
+				CA5D6CE82BE3613B0040975D /* Buildable.swift */,
+				CA5D6CEF2BE3878F0040975D /* ProgressHUD.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CA5D6CEA2BE37A9A0040975D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CEB2BE37AB70040975D /* Collection+Ext.swift */,
+				CA5D6CED2BE37ACE0040975D /* View+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA5D6CF62BE3BD110040975D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CF42BE3BC2C0040975D /* CharacterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA5D6CF72BE419B60040975D /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CE12BE35D6E0040975D /* CharactersTableView.swift */,
+				CA5D6CE32BE35EA90040975D /* CharactersCellItem.swift */,
+				CA5D6CE52BE360040040975D /* CharactersTableViewCell.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		CA5D6CF82BE419C20040975D /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D6CF92BE419CD0040975D /* DynamicCollectionView.swift */,
+				CA5D6CFB2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift */,
+				CA5D6CFD2BE41B710040975D /* StatusCollectionViewCell.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +356,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5D6CBE2BE28F6C0040975D /* RMEntities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +370,7 @@
 				CA5D6C722BE26C630040975D /* Frameworks */,
 				CA5D6C732BE26C630040975D /* Resources */,
 				CA5D6CC62BE28F6C0040975D /* Embed Frameworks */,
+				CA5D6CCD2BE2A3640040975D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -262,6 +378,12 @@
 				CA5D6CC02BE28F6C0040975D /* PBXTargetDependency */,
 			);
 			name = RMChars;
+			packageProductDependencies = (
+				CA5D6CCF2BE2AA760040975D /* StatefulMVVM */,
+				CA5D6CD32BE2B1040040975D /* NetServiceKit */,
+				CA5D6CDE2BE2C1E90040975D /* SnapKit */,
+				CA5D6CF22BE3A0590040975D /* SDWebImage */,
+			);
 			productName = RMChars;
 			productReference = CA5D6C752BE26C630040975D /* RMChars.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +434,12 @@
 				Base,
 			);
 			mainGroup = CA5D6C6C2BE26C630040975D;
+			packageReferences = (
+				CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */,
+				CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */,
+				CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = CA5D6C762BE26C630040975D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5D6D002BE4C3970040975D /* README.md in Resources */,
 				CA5D6C852BE26C650040975D /* LaunchScreen.storyboard in Resources */,
 				CA5D6C822BE26C650040975D /* Assets.xcassets in Resources */,
 			);
@@ -341,6 +470,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CA5D6CCD2BE2A3640040975D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA5D6C712BE26C630040975D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -348,22 +499,36 @@
 			files = (
 				CA5D6CB22BE2800B0040975D /* CharDetailsViewController.swift in Sources */,
 				CA5D6CB42BE2800B0040975D /* CharDetailsViewModel.swift in Sources */,
+				CA5D6CEE2BE37ACF0040975D /* View+Ext.swift in Sources */,
+				CA5D6CDC2BE2B6520040975D /* CharacterServiceProtocol.swift in Sources */,
+				CA5D6CE92BE3613B0040975D /* Buildable.swift in Sources */,
+				CA5D6CFE2BE41B710040975D /* StatusCollectionViewCell.swift in Sources */,
+				CA5D6CE62BE360040040975D /* CharactersTableViewCell.swift in Sources */,
+				CA5D6CF02BE3878F0040975D /* ProgressHUD.swift in Sources */,
 				CA5D6CB02BE2800B0040975D /* CharDetailsInputData.swift in Sources */,
+				CA5D6CFC2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				CA5D6CA52BE27D6E0040975D /* CharListViewController.swift in Sources */,
 				CA5D6C972BE26E7E0040975D /* ViewModel.swift in Sources */,
 				CA5D6CB12BE2800B0040975D /* CharDetailsRouter.swift in Sources */,
+				CA5D6CD82BE2B4D50040975D /* CharacterEndpoint.swift in Sources */,
 				CA5D6C992BE26E980040975D /* ViewModelController.swift in Sources */,
 				CA5D6CA72BE27D860040975D /* CharListViewModel.swift in Sources */,
 				CA5D6C792BE26C630040975D /* AppDelegate.swift in Sources */,
+				CA5D6CE42BE35EA90040975D /* CharactersCellItem.swift in Sources */,
+				CA5D6CE22BE35D6E0040975D /* CharactersTableView.swift in Sources */,
 				CA5D6CB52BE2800B0040975D /* CharDetailsViewState.swift in Sources */,
 				CA5D6C9D2BE271B20040975D /* CharListBuilder.swift in Sources */,
 				CA5D6C952BE26E620040975D /* ViewState.swift in Sources */,
 				CA5D6CA12BE271E70040975D /* CharListProtocols.swift in Sources */,
+				CA5D6CEC2BE37AB70040975D /* Collection+Ext.swift in Sources */,
 				CA5D6C9F2BE271D70040975D /* CharListInputData.swift in Sources */,
+				CA5D6CDA2BE2B5190040975D /* CharacterService.swift in Sources */,
 				CA5D6CA32BE27D5B0040975D /* CharListRouter.swift in Sources */,
+				CA5D6CFA2BE419CD0040975D /* DynamicCollectionView.swift in Sources */,
 				CA5D6CA92BE27D950040975D /* CharListViewState.swift in Sources */,
 				CA5D6CB32BE2800B0040975D /* CharDetailsBuilder.swift in Sources */,
 				CA5D6C7B2BE26C630040975D /* SceneDelegate.swift in Sources */,
+				CA5D6CF52BE3BC2C0040975D /* CharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5D6CC92BE28FF50040975D /* RMChar.swift in Sources */,
+				CA5D6CC92BE28FF50040975D /* CharactersResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +599,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -497,7 +662,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -674,6 +839,57 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Moduls/StatefulMVVM;
+		};
+		CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Moduls/NetServiceKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA5D6CCF2BE2AA760040975D /* StatefulMVVM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StatefulMVVM;
+		};
+		CA5D6CD32BE2B1040040975D /* NetServiceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetServiceKit;
+		};
+		CA5D6CDE2BE2C1E90040975D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CA5D6CF22BE3A0590040975D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA5D6C6D2BE26C630040975D /* Project object */;
 }
