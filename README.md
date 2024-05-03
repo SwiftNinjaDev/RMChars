@@ -42,3 +42,7 @@ In the "Network Layer" folder, you'll find specific network services like `Chara
 - **Design System Package**: Develop a local package to maintain a consistent design system across the app, including custom fonts, colors, and icons.
 - **Dynamic Character Statuses**: Replace the hardcoded list of character statuses with a dynamic implementation based on data received from the API (there is no such API as I see, just a general point).
 - **Pagination**: The current pagination mechanism provided by the Rick and Morty API is unusual (providing in 'prev' abd 'next' whole URL). Adapting this to more conventional methods seen in other APIs could improve the data handling efficiency.
+- **Refactor CharacterView.swift**: Separate big view to smaller parts. 
+- **ProgessHUD**: In this project used very basic approach. It can be additionally customized or replaced. 
+- **Submodules connection**: Need to connect `StatefulMVVM` and `NetServiceKit` as submodules.
+- **Error handling**: Add error handling. As option - by adding custom alerts.
