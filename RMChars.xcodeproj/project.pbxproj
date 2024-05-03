@@ -49,6 +49,8 @@
 		CA5D6CFC2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CFB2BE41A270040975D /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		CA5D6CFE2BE41B710040975D /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D6CFD2BE41B710040975D /* StatusCollectionViewCell.swift */; };
 		CA5D6D002BE4C3970040975D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA5D6CFF2BE4C3970040975D /* README.md */; };
+		CA5D6D032BE508830040975D /* NetServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6D022BE508830040975D /* NetServiceKit */; };
+		CA5D6D062BE5098A0040975D /* StatefulMVVM in Frameworks */ = {isa = PBXBuildFile; productRef = CA5D6D052BE5098A0040975D /* StatefulMVVM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +87,6 @@
 		CA5D6C942BE26E620040975D /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		CA5D6C962BE26E7E0040975D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CA5D6C982BE26E980040975D /* ViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelController.swift; sourceTree = "<group>"; };
-		CA5D6C9B2BE270200040975D /* StatefulMVVM */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StatefulMVVM; path = Moduls/StatefulMVVM; sourceTree = "<group>"; };
 		CA5D6C9C2BE271B20040975D /* CharListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharListBuilder.swift; sourceTree = "<group>"; };
 		CA5D6C9E2BE271D70040975D /* CharListInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharListInputData.swift; sourceTree = "<group>"; };
 		CA5D6CA02BE271E70040975D /* CharListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharListProtocols.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		CA5D6CAF2BE2800B0040975D /* CharDetailsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailsViewState.swift; sourceTree = "<group>"; };
 		CA5D6CBB2BE28F6C0040975D /* RMEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5D6CC82BE28FF50040975D /* CharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponse.swift; sourceTree = "<group>"; };
-		CA5D6CD12BE2B0EE0040975D /* NetServiceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NetServiceKit; path = Moduls/NetServiceKit; sourceTree = "<group>"; };
 		CA5D6CD72BE2B4D50040975D /* CharacterEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEndpoint.swift; sourceTree = "<group>"; };
 		CA5D6CD92BE2B5190040975D /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		CA5D6CDB2BE2B6520040975D /* CharacterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceProtocol.swift; sourceTree = "<group>"; };
@@ -125,7 +125,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA5D6CD02BE2AA760040975D /* StatefulMVVM in Frameworks */,
+				CA5D6D032BE508830040975D /* NetServiceKit in Frameworks */,
 				CA5D6CDF2BE2C1E90040975D /* SnapKit in Frameworks */,
+				CA5D6D062BE5098A0040975D /* StatefulMVVM in Frameworks */,
 				CA5D6CD42BE2B1040040975D /* NetServiceKit in Frameworks */,
 				CA5D6CC12BE28F6C0040975D /* RMEntities.framework in Frameworks */,
 				CA5D6CF32BE3A0590040975D /* SDWebImage in Frameworks */,
@@ -146,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				CA5D6CFF2BE4C3970040975D /* README.md */,
-				CA5D6CD12BE2B0EE0040975D /* NetServiceKit */,
-				CA5D6C9B2BE270200040975D /* StatefulMVVM */,
 				CA5D6C772BE26C630040975D /* RMChars */,
 				CA5D6CBC2BE28F6C0040975D /* RMEntities */,
 				CA5D6C762BE26C630040975D /* Products */,
@@ -383,6 +383,8 @@
 				CA5D6CD32BE2B1040040975D /* NetServiceKit */,
 				CA5D6CDE2BE2C1E90040975D /* SnapKit */,
 				CA5D6CF22BE3A0590040975D /* SDWebImage */,
+				CA5D6D022BE508830040975D /* NetServiceKit */,
+				CA5D6D052BE5098A0040975D /* StatefulMVVM */,
 			);
 			productName = RMChars;
 			productReference = CA5D6C752BE26C630040975D /* RMChars.app */;
@@ -435,10 +437,10 @@
 			);
 			mainGroup = CA5D6C6C2BE26C630040975D;
 			packageReferences = (
-				CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */,
-				CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */,
 				CA5D6CDD2BE2C1E80040975D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				CA5D6D012BE508830040975D /* XCLocalSwiftPackageReference "Modules/NetServiceKit" */,
+				CA5D6D042BE5098A0040975D /* XCLocalSwiftPackageReference "Modules/StatefulMVVM" */,
 			);
 			productRefGroup = CA5D6C762BE26C630040975D /* Products */;
 			projectDirPath = "";
@@ -841,13 +843,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		CA5D6CCE2BE2AA760040975D /* XCLocalSwiftPackageReference "Moduls/StatefulMVVM" */ = {
+		CA5D6D012BE508830040975D /* XCLocalSwiftPackageReference "Modules/NetServiceKit" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Moduls/StatefulMVVM;
+			relativePath = Modules/NetServiceKit;
 		};
-		CA5D6CD22BE2B1040040975D /* XCLocalSwiftPackageReference "Moduls/NetServiceKit" */ = {
+		CA5D6D042BE5098A0040975D /* XCLocalSwiftPackageReference "Modules/StatefulMVVM" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Moduls/NetServiceKit;
+			relativePath = Modules/StatefulMVVM;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -888,6 +890,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA5D6CF12BE3A0590040975D /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		CA5D6D022BE508830040975D /* NetServiceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetServiceKit;
+		};
+		CA5D6D052BE5098A0040975D /* StatefulMVVM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StatefulMVVM;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
