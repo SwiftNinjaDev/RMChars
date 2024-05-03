@@ -18,5 +18,6 @@ enum CharDetailsViewState: ViewState {
         let location: String?
         let gender: String?
         let species: String
+        let status: CharacterStatus?
     }
 }

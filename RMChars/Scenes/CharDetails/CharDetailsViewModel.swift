@@ -77,7 +77,8 @@ extension CharDetailsViewModel {
                     name: response.name,
                     location: response.location?.name,
                     gender: response.gender?.rawValue,
-                    species: response.species
+                    species: response.species,
+                    status: CharacterStatus(from: response.status)
                 )
                 self.store.change(state: .loaded(successData))
             }

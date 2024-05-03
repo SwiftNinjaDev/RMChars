@@ -32,7 +32,13 @@ final class CharDetailsViewController: ViewModelController<CharDetailsViewState,
     
     private func configureUI(with data: CharDetailsViewState.CharacterDetails) {
         let speciesGender = "\(data.species) • \(data.gender ?? "")"
-        let swiftUIView = CharacterView(name: data.name, speciesGender: speciesGender, location: data.location ?? "", image: data.image)
+        let swiftUIView = CharacterView(
+            name: data.name,
+            speciesGender: speciesGender,
+            location: data.location ?? "",
+            image: data.image,
+            status: data.status
+        )
         swiftUIController = UIHostingController(rootView: swiftUIView)
         
         if let swiftUIController = swiftUIController {

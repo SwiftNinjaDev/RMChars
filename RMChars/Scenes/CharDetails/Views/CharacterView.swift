@@ -12,6 +12,7 @@ struct CharacterView: View {
     var speciesGender: String
     var location: String
     var image: UIImage
+    var status: CharacterStatus?
 
     var body: some View {
         VStack {
@@ -25,9 +26,22 @@ struct CharacterView: View {
                 .padding(.top, 16)
 
             VStack(alignment: .leading, spacing: 10) {
-                Text(name)
-                    .font(.title)
-                    .fontWeight(.bold)
+                HStack {
+                    Text(name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    if let status = status {
+                        Text(status.rawValue)
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(status.backgroundColor)
+                            .cornerRadius(10)
+                            .foregroundColor(.white)
+                    }
+                }
 
                 Text(speciesGender)
                     .font(.subheadline)

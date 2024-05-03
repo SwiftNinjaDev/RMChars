@@ -6,6 +6,7 @@
 //
 
 import RMEntities
+import SwiftUI
 
 enum CharListoViewState: ViewState {
     case loading
@@ -32,6 +33,17 @@ enum CharacterStatus: String, CaseIterable {
             self = .dead
         case .unknown:
             self = .unknown
+        }
+    }
+    
+    var backgroundColor: Color {
+        switch self {
+        case .alive:
+            return .blue
+        case .dead:
+            return .red
+        case .unknown:
+            return .gray
         }
     }
 }
